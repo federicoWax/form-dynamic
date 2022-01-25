@@ -1,15 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './Components/Form';
+import { InputInterface } from './Interfaces';
 
-interface Input {
-  id: number;
-  type: string;
-  label: string;
-  value: string | number | boolean;
-  options: null | Array<any>
-};
-
-const json: Input[] = [
+const json: InputInterface[] = [
   {
     id: 0,
     type: "text",
@@ -23,22 +16,27 @@ const json: Input[] = [
     label: "Input tipo select",
     value: "",
     options: [
-      "Si"
+      "Si",
+      "No"
     ]
   },
   {
     id: 2,
     type: "radio",
     label: "Input tipo radio",
-    value: false,
-    options: null
+    value: "Masculino",
+    options: [
+      "Masculino",
+      "Femenino",
+      "Otro"
+    ]
   }
 ];
 
 function App() {
   return (
     <div className="App">
-      hola
+      <Form json={json} />
     </div>
   );
 }
